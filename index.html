@@ -1,59 +1,117 @@
 <!--
-  ERYN BURKE - MENTORSHIP OPTIONS
+  ERYN BURKE - MENTORSHIP OPTIONS (v2, branded)
   Built 17 Aug 2026 from the Fireflies enquiry call (01M01RPTA6JDYDWCXA2PPMKV0R, 17 Aug 8:30am).
+  Built with /resonance-messaging + neuro-emotive-engine.md, then /stoptheslop.
 
-  Built with /resonance-messaging + neuro-emotive-engine.md.
   Emotional stack (her verbatim): fear running the day / self-distrust / lost self on autopilot /
-  shame about outbursts at her kids / raw grief (dad, suicide, Dec 2025) / exhaustion.
+  shame about outbursts at her kids / grief / exhaustion.
   Arc: living in fear and on autopilot -> grounded, able to feel her own yes and no.
-  Real objection: NOT price. "Can I even do this right now" - she is grieving, has COVID,
-  two kids, low confidence, and named herself an overthinker who takes days to decide.
-  Models fired: Pain Diffuser, Empathy Echo, Believability Bridge, Trust-Through-Transparency,
-  Guided Choice Maker (two options only, per Kelly), Voiceprint Precision.
-  NO urgency of any kind - she is grieving and unwell, manufactured urgency would fail the ethics gate.
-  Business build deliberately NOT used to sell the intensive: she said expressly she does not want
-  to go professional. Intensive is sold on proximity and support instead.
+  Real objection: NOT price. "Can I even do this right now."
+  NO urgency anywhere - she is grieving and unwell.
+  Grief is named but her dad is NOT (Kelly's instruction, 17 Aug). Present tense throughout.
+  Downsell order: weekly intensive leads, monthly is the lighter alternative (Kelly, 17 Aug).
+
+  SBA branding per Business-Brain/brand.json: #1E3329 / #2D4A3E / #C4663A / #C9A96E / #F5EDE0,
+  Cormorant Garamond + Inter, logo + forest-fabric and cream-paper textures at low opacity.
+  Assets hosted on Supabase digital-products/sba/.
+  Testimonials: healing and nervous-system only, no business quotes. All verbatim from
+  Business-Brain/testimonials.md.
 -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Your options - Eryn</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap');
   :root{
-    --forest:#2D4A3E; --deep:#1E3329; --terracotta:#C4663A; --gold:#C9A96E;
-    --cream:#F5EDE0; --light:#FEFCF9; --off:#FAF6F1; --charcoal:#2C2C2C;
+    --forest:#2D4A3E; --deep:#1E3329; --terracotta:#C4663A; --terracotta-d:#A8522B;
+    --gold:#C9A96E; --cream:#F5EDE0; --light:#FEFCF9; --off:#FAF6F1; --charcoal:#2C2C2C;
+    --tex-forest:url('https://jiquevvzrdavgqonvvug.supabase.co/storage/v1/object/public/digital-products/sba/texture-forest.jpg');
+    --tex-cream:url('https://jiquevvzrdavgqonvvug.supabase.co/storage/v1/object/public/digital-products/sba/texture-cream.jpg');
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:'Inter',sans-serif;color:var(--charcoal);background:var(--light);line-height:1.75;font-size:16px}
+  body{font-family:'Inter',sans-serif;color:var(--charcoal);background:var(--light);line-height:1.75;font-size:16px;overflow-x:hidden}
   h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:700}
-  .wrap{max-width:640px;margin:0 auto;padding:0 22px}
-  .hero{background:var(--deep);color:var(--cream);padding:70px 22px 60px;text-align:center}
-  .hero h1{font-size:clamp(30px,6vw,42px);line-height:1.2;margin-bottom:18px}
-  .hero p{font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;color:rgba(245,237,224,.8);max-width:460px;margin:0 auto}
-  section{padding:54px 0}
-  h2{font-size:clamp(24px,5vw,30px);color:var(--deep);margin-bottom:18px}
+  .wrap{max-width:640px;margin:0 auto;padding:0 22px;position:relative;z-index:2}
+  section{padding:56px 0;position:relative}
+  h2{font-size:clamp(24px,5vw,31px);color:var(--deep);margin-bottom:18px}
   p{margin-bottom:16px}
-  .soft{background:var(--off)}
+  em{color:var(--forest)}
+
+  /* textured dark panels */
+  .dark{background:var(--deep);color:var(--cream);position:relative;overflow:hidden}
+  .dark:before{content:"";position:absolute;inset:0;background:var(--tex-forest) center/cover;opacity:.32;mix-blend-mode:overlay;pointer-events:none}
+  .dark h2,.dark h3{color:var(--cream)}
+  .soft{background:var(--off);position:relative;overflow:hidden}
+  .soft:before{content:"";position:absolute;inset:0;background:var(--tex-cream) center/cover;opacity:.30;pointer-events:none}
+
+  /* gold flecks */
+  .flecks{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1}
+  .flecks i{position:absolute;bottom:-14px;width:4px;height:4px;border-radius:50%;
+    background:var(--gold);opacity:0;filter:blur(.3px);
+    box-shadow:0 0 7px 1px rgba(201,169,110,.85);
+    animation:rise linear infinite}
+  @keyframes rise{
+    0%{transform:translateY(0) translateX(0) scale(.6);opacity:0}
+    12%{opacity:.95}
+    70%{opacity:.65}
+    100%{transform:translateY(-115vh) translateX(var(--dx)) scale(1.15);opacity:0}
+  }
+
+  /* hero */
+  .hero{padding:64px 22px 62px;text-align:center}
+  .hero img.logo{width:184px;max-width:52%;margin:0 auto 30px;display:block;opacity:.96}
+  .hero h1{font-size:clamp(31px,6.4vw,44px);line-height:1.18;margin-bottom:16px}
+  .hero .sub{font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;color:rgba(245,237,224,.82);max-width:430px;margin:0 auto}
+  .rule{width:64px;height:1px;background:var(--gold);margin:26px auto;opacity:.7}
+
   .pull{font-family:'Cormorant Garamond',serif;font-size:21px;font-style:italic;color:var(--forest);border-left:3px solid var(--gold);padding-left:18px;margin:26px 0}
   .outcome{margin-bottom:20px}
-  .outcome b{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:700;color:var(--deep);display:block;margin-bottom:1px}
-  .card{background:white;border:1px solid #E6DCD2;border-radius:10px;padding:30px 26px;margin-bottom:26px;box-shadow:0 6px 22px rgba(0,0,0,.05)}
-  .card h3{font-size:25px;color:var(--deep);margin-bottom:4px}
-  .card .for{font-size:14px;color:var(--terracotta);font-weight:600;letter-spacing:.4px;text-transform:uppercase;margin-bottom:16px}
+  .outcome b{font-family:'Cormorant Garamond',serif;font-size:19.5px;font-weight:700;color:var(--deep);display:block;margin-bottom:1px}
+  .dark .outcome b{color:var(--gold)}
+
+  .card{background:white;border:1px solid #E6DCD2;border-radius:12px;padding:32px 27px;margin-bottom:26px;box-shadow:0 10px 34px rgba(30,51,41,.09)}
+  .card.feature{border:1px solid var(--gold);box-shadow:0 14px 44px rgba(196,102,58,.14)}
+  .card h3{font-size:26px;color:var(--deep);margin-bottom:4px}
+  .card .for{font-size:13.5px;color:var(--terracotta);font-weight:600;letter-spacing:.5px;text-transform:uppercase;margin-bottom:16px}
   .card ul{list-style:none;margin:16px 0}
-  .card li{padding-left:20px;position:relative;margin-bottom:9px;font-size:15.5px}
-  .card li:before{content:"-";position:absolute;left:4px;color:var(--terracotta)}
-  .price{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:var(--terracotta);margin-top:18px}
-  .price small{display:block;font-family:'Inter',sans-serif;font-size:13.5px;font-weight:400;color:#8a8078;margin-top:5px;letter-spacing:.2px}
-  .note{background:var(--cream);border-radius:8px;padding:22px;font-size:15px}
-  .close{background:var(--deep);color:var(--cream);text-align:center;padding:60px 22px}
-  .close h2{color:var(--cream)}
-  .sign{font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;margin-top:26px}
-  @media(max-width:640px){ section{padding:42px 0} }
+  .card li{padding-left:22px;position:relative;margin-bottom:10px;font-size:15.5px}
+  .card li:before{content:"";position:absolute;left:2px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+  .price{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:700;color:var(--terracotta);margin-top:20px}
+  .price small{display:block;font-family:'Inter',sans-serif;font-size:13.5px;font-weight:400;color:#8a8078;margin-top:5px}
+  .note{background:var(--cream);border-radius:10px;padding:23px;font-size:15px;position:relative;z-index:2}
+
+  /* video */
+  .vids{display:grid;gap:24px}
+  .vid video{width:100%;border-radius:10px;display:block;background:#000;box-shadow:0 14px 40px rgba(0,0,0,.34)}
+  .vid p.cap{text-align:center;font-size:13.5px;color:rgba(245,237,224,.62);margin:11px 0 0}
+
+  /* carousel */
+  .caro{position:relative;z-index:2;max-width:640px;margin:0 auto;padding:0 22px}
+  .caro-win{overflow:hidden;border-radius:12px}
+  .caro-track{display:flex;transition:transform .55s cubic-bezier(.4,0,.2,1)}
+  .slide{min-width:100%;padding:34px 28px;background:rgba(245,237,224,.06);border:1px solid rgba(201,169,110,.28);border-radius:12px}
+  .slide q{display:block;font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;line-height:1.62;color:var(--cream);quotes:none}
+  .slide cite{display:block;margin-top:15px;font-family:'Inter',sans-serif;font-style:normal;font-size:13px;letter-spacing:.6px;text-transform:uppercase;color:var(--gold)}
+  .dots{display:flex;justify-content:center;gap:9px;margin-top:20px}
+  .dots b{width:8px;height:8px;border-radius:50%;background:rgba(201,169,110,.32);cursor:pointer;transition:.3s}
+  .dots b.on{background:var(--gold);transform:scale(1.28)}
+  .arrows{display:flex;justify-content:center;gap:26px;margin-top:14px}
+  .arrows button{background:none;border:1px solid rgba(201,169,110,.4);color:var(--gold);width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:15px;line-height:1;transition:.25s}
+  .arrows button:hover{background:rgba(201,169,110,.15)}
+
+  .sign{font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;margin-top:26px}
+  @media(max-width:640px){ section{padding:44px 0} .slide{padding:28px 22px} .slide q{font-size:18px} }
+  @media(prefers-reduced-motion:reduce){ .flecks{display:none} .caro-track{transition:none} }
 </style>
 
-<div class="hero">
-  <h1>Two ways we could<br>walk this together</h1>
-  <p>No rush, no pressure. Read it when your head is clear.</p>
+<!-- HERO -->
+<div class="dark hero">
+  <div class="flecks" data-flecks="18"></div>
+  <div style="position:relative;z-index:2">
+    <img class="logo" src="https://jiquevvzrdavgqonvvug.supabase.co/storage/v1/object/public/digital-products/sba/sba-logo-dark.png" alt="Spiritual Badass Academy">
+    <h1>Two ways we could<br>walk this together</h1>
+    <div class="rule"></div>
+    <p class="sub">No rush, no pressure. Read it when your head is clear.</p>
+  </div>
 </div>
 
 <section>
@@ -99,7 +157,7 @@
   </div>
 </section>
 
-<section>
+<section class="soft">
   <div class="wrap">
     <h2>A word about your nervous system</h2>
     <p>You mentioned the ADHD and the autism traits almost in passing this morning, and then went straight back to apologising for how you react to things. I want to come back to that for a minute.</p>
@@ -107,6 +165,56 @@
     <p>Most of us get pushed into the same mould, and for a lot of us it does real harm. The part that gets missed is what comes afterwards, because years later we are still shoving ourselves back into that shape with nobody standing over us making us do it, because somewhere along the way we were taught that is what a functioning adult looks like. It is where the people pleasing lives, and the yes to shifts you do not want, and the checking in with three people before you will let yourself move.</p>
     <p>So we work the other way around. I look at your human design and your astrology because they show me how you are wired to make decisions, and then we build around that instead of against it. If your system needs a few days and a decent sleep before it can commit to anything, that is your design, and we stop treating it as something to be corrected.</p>
     <p>I am neurospicy myself, so I will also tell you that learning to read your own nervous system takes practice. It is a skill and skills need repetition. You will get it wrong, you will override it, and you will notice on a Thursday that your body already told you on Monday. All of that is the process, and it is why we do this over months rather than in a weekend.</p>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section class="dark">
+  <div class="flecks" data-flecks="14"></div>
+  <div class="wrap">
+    <h2 style="text-align:center">What this actually looks like</h2>
+    <p style="text-align:center;color:rgba(245,237,224,.78);max-width:470px;margin:0 auto 30px">A minute of me teaching, and a minute of women who have done this work, in their own words.</p>
+    <div class="vids">
+      <div class="vid">
+        <video controls preload="metadata" playsinline
+          poster="https://jiquevvzrdavgqonvvug.supabase.co/storage/v1/object/public/digital-products/sba/kelly-body-talks-back-poster.jpg">
+          <source src="https://jiquevvzrdavgqonvvug.supabase.co/storage/v1/object/public/digital-products/sba/kelly-body-talks-back.mp4" type="video/mp4">
+        </video>
+        <p class="cap">Me, on your body talking back to you. This is the work we start with.</p>
+      </div>
+      <div class="vid">
+        <video controls preload="metadata" playsinline
+          poster="https://jiquevvzrdavgqonvvug.supabase.co/storage/v1/object/public/digital-products/sba/mentorship-testimonials-poster.jpg">
+          <source src="https://jiquevvzrdavgqonvvug.supabase.co/storage/v1/object/public/digital-products/sba/mentorship-testimonials-61s.mp4" type="video/mp4">
+        </video>
+        <p class="cap">Linda, Theress and Karen, after six days of this work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL CAROUSEL -->
+<section class="dark">
+  <div class="flecks" data-flecks="16"></div>
+  <div class="caro">
+    <h2 style="text-align:center;margin-bottom:26px">What they say afterwards</h2>
+    <div class="caro-win">
+      <div class="caro-track" id="track">
+        <div class="slide"><q>I'm feeling really confident. I'm feeling very calm. I'm not a calm person, I'm very volatile, and I'm feeling good. I didn't even scream at my kids last night when they pissed me off.</q><cite>Vanessa</cite></div>
+        <div class="slide"><q>I did your meditation last night. And I woke up this morning feeling like fog had been lifted, and something has changed.</q><cite>Linda DeiRossi</cite></div>
+        <div class="slide"><q>What a change in perspective to realise my body wasn't my enemy. Everything my body was doing was actually FOR me, not against me. That shift alone was worth the entire program.</q><cite>Deanne</cite></div>
+        <div class="slide"><q>I never remembered it as a tool. But then since relearning it, this is how I'm going to do my trauma and triggers and healing now.</q><cite>Amy Dawson</cite></div>
+        <div class="slide"><q>I just literally used the bolster on the bed and just felt my body drop and drop and drop, and it dropped even more into like relaxation.</q><cite>Karen Caddies</cite></div>
+        <div class="slide"><q>I'm actually getting a part of me that I never knew existed.</q><cite>Theress Lowe</cite></div>
+        <div class="slide"><q>I needed this. I've needed something for so long, because I'm just like, I don't know, what am I meant to be doing?</q><cite>Jodie Gladman</cite></div>
+        <div class="slide"><q>I don't have many people in my corner, so I appreciate it. I trust you. Like, I know you've got my back.</q><cite>Tash Cornack</cite></div>
+      </div>
+    </div>
+    <div class="dots" id="dots"></div>
+    <div class="arrows">
+      <button onclick="caro(-1)" aria-label="Previous">&#8249;</button>
+      <button onclick="caro(1)" aria-label="Next">&#8250;</button>
+    </div>
   </div>
 </section>
 
@@ -121,7 +229,7 @@
 <section class="soft">
   <div class="wrap">
     <h2>Option one - Weekly</h2>
-    <div class="card">
+    <div class="card feature">
       <h3>Twelve weeks, with me right beside you</h3>
       <div class="for">If you want someone in it with you while you move through this</div>
       <p>Before week one even begins we sit down for a 90 minute mapping session, where I read your astrology and your human design and we build the whole thing around how you are actually wired. Then we meet every single week, and between those sessions you have me.</p>
@@ -173,10 +281,63 @@
   </div>
 </section>
 
-<div class="close">
-  <h2>Take your time</h2>
-  <p style="max-width:460px;margin:0 auto 14px;color:rgba(245,237,224,.85);">Sit with it and see which one feels lighter. There is no deadline on this and I am not going to chase you about it, because if you decide something to get it off your list your body will not be behind it and we will both feel that by week two.</p>
-  <p style="max-width:460px;margin:0 auto;color:rgba(245,237,224,.85);">When you are ready, or if something pings up at eleven at night, just text me. Even if it is only "I don't know what I'm asking yet."</p>
-  <p style="max-width:460px;margin:22px auto 0;color:rgba(245,237,224,.85);">For now, go and rest, and go and meet that baby once you are well. Feel the lot of it while you are at it, the joy about the baby and the disappointment about the waiting room and the plain awfulness of being this sick. You do not have to pick one.</p>
-  <p class="sign">Kelly x</p>
+<div class="dark" style="text-align:center;padding:64px 22px">
+  <div class="flecks" data-flecks="20"></div>
+  <div style="position:relative;z-index:2">
+    <h2>Take your time</h2>
+    <div class="rule"></div>
+    <p style="max-width:460px;margin:0 auto 14px;color:rgba(245,237,224,.85);">Sit with it and see which one feels lighter. There is no deadline on this and I am not going to chase you about it, because if you decide something to get it off your list your body will not be behind it and we will both feel that by week two.</p>
+    <p style="max-width:460px;margin:0 auto;color:rgba(245,237,224,.85);">When you are ready, or if something pings up at eleven at night, just text me. Even if it is only "I don't know what I'm asking yet."</p>
+    <p style="max-width:460px;margin:22px auto 0;color:rgba(245,237,224,.85);">For now, go and rest, and go and meet that baby once you are well. Feel the lot of it while you are at it, the joy about the baby and the disappointment about the waiting room and the plain awfulness of being this sick. You do not have to pick one.</p>
+    <p class="sign">Kelly x</p>
+  </div>
 </div>
+
+<script>
+// gold flecks
+document.querySelectorAll('.flecks').forEach(box=>{
+  const n = +box.dataset.flecks || 14;
+  for(let i=0;i<n;i++){
+    const f=document.createElement('i');
+    const size=(Math.random()*3.2+2).toFixed(1);
+    f.style.left=(Math.random()*100)+'%';
+    f.style.width=size+'px'; f.style.height=size+'px';
+    f.style.setProperty('--dx',((Math.random()*70)-35).toFixed(0)+'px');
+    f.style.animationDuration=(Math.random()*11+13).toFixed(1)+'s';
+    f.style.animationDelay=(-Math.random()*22).toFixed(1)+'s';
+    box.appendChild(f);
+  }
+});
+
+// carousel
+const track=document.getElementById('track');
+const slides=track?track.children.length:0;
+const dotsBox=document.getElementById('dots');
+let idx=0, timer=null;
+if(track){
+  for(let i=0;i<slides;i++){
+    const d=document.createElement('b');
+    d.onclick=()=>{go(i);reset();};
+    dotsBox.appendChild(d);
+  }
+  const go=i=>{
+    idx=(i+slides)%slides;
+    track.style.transform='translateX(-'+(idx*100)+'%)';
+    [...dotsBox.children].forEach((d,j)=>d.classList.toggle('on',j===idx));
+  };
+  window.caro=d=>{go(idx+d);reset();};
+  const reset=()=>{clearInterval(timer);timer=setInterval(()=>go(idx+1),6500);};
+  go(0); reset();
+  const caro=document.querySelector('.caro');
+  caro.addEventListener('mouseenter',()=>clearInterval(timer));
+  caro.addEventListener('mouseleave',reset);
+  let x0=null;
+  caro.addEventListener('touchstart',e=>{x0=e.touches[0].clientX},{passive:true});
+  caro.addEventListener('touchend',e=>{
+    if(x0===null)return;
+    const dx=e.changedTouches[0].clientX-x0;
+    if(Math.abs(dx)>44){go(idx+(dx<0?1:-1));reset();}
+    x0=null;
+  },{passive:true});
+}
+</script>
