@@ -79,6 +79,17 @@
   .price small{display:block;font-family:'Inter',sans-serif;font-size:13.5px;font-weight:400;color:#8a8078;margin-top:5px}
   .note{background:var(--cream);border-radius:10px;padding:23px;font-size:15px;position:relative;z-index:2}
 
+  /* payment options */
+  .pay{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+  .pay-opt{background:var(--off);border:1px solid #E6DCD2;border-radius:10px;padding:19px 18px}
+  .pay-opt h4{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:var(--deep);margin-bottom:6px}
+  .pay-opt .amt{font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:700;color:var(--terracotta);margin-bottom:10px}
+  .pay-opt .sml{font-size:13px;color:#7d746c;line-height:1.6;margin:0}
+  .sched{list-style:none;margin:0 0 11px;padding:0}
+  .sched li{position:relative;padding-left:27px;font-size:13.5px;margin-bottom:7px;line-height:1.5}
+  .sched li span{position:absolute;left:0;top:1px;width:18px;height:18px;border-radius:50%;background:var(--gold);color:#fff;font-size:10.5px;font-weight:600;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif}
+  @media(max-width:640px){ .pay{grid-template-columns:1fr} }
+
   /* video */
   .vids{display:grid;gap:24px}
   .vid video{width:100%;border-radius:10px;display:block;background:#000;box-shadow:0 14px 40px rgba(0,0,0,.34)}
@@ -254,7 +265,27 @@
         <li>Someone holding the thread on the weeks you cannot hold it yourself</li>
       </ul>
       <p style="margin-top:16px;margin-bottom:0;">Twelve weeks of never losing momentum, and never having to sit alone with something heavy for three weeks waiting for the next session.</p>
-      <div class="price">$5,000 + GST<small>Deposit to start, then split up however suits you.</small></div>
+      <div class="price">$5,000 + GST<small>Two ways to pay, whichever suits your household.</small></div>
+
+      <div class="pay">
+        <div class="pay-opt">
+          <h4>Pay in full</h4>
+          <p class="amt">$5,000 + GST</p>
+          <p class="sml">One payment, and it is done.</p>
+        </div>
+        <div class="pay-opt">
+          <h4>Payment plan</h4>
+          <p class="amt">5 x $1,000 + GST</p>
+          <ol class="sched">
+            <li><span>1</span>On signing</li>
+            <li><span>2</span>Once your onboarding call is booked in</li>
+            <li><span>3</span>One month later</li>
+            <li><span>4</span>One month after that</li>
+            <li><span>5</span>One month after that</li>
+          </ol>
+          <p class="sml">The last payment lands as the twelve weeks finish, which still leaves week thirteen free for us to offboard properly or to talk about carrying on.</p>
+        </div>
+      </div>
     </div>
 
     <h2>Option two - Monthly</h2>
